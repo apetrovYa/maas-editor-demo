@@ -11,14 +11,7 @@ var toastr = require('toastr');
 var ManageDslPage = React.createClass({
  mixins: [
      Router.Navigation
- ], 
- statics: {
-     willTransitionForm: function(transition, component) {
-         if (component.state.dirty && !confirm('Leave without saving?')) {
-             transition.abort();
-         }
-     }
- },
+ ],
  getInitialState: function() {
     return {
         dsl: {id: '', name: '', spec: ''},
@@ -36,7 +29,7 @@ var ManageDslPage = React.createClass({
 setDslState: function(event) {
     this.setState({dirty: true});
     var field = event.target.name;
-    var value = event.target.value;
+    var value = event.taget.value;
     this.state.dsl[field] = value;
     return this.setState({dsl: this.state.dsl});
 },
@@ -58,14 +51,20 @@ saveDsl: function(event) {
         return;
     }
     
+    var editor = ace.edit("editor");
+    var value = editor.getValue();
+    this.state.dsl.spec = value; 
+        
     if (this.state.dsl.id) {
         DslActions.updateDsl(this.state.dsl);
+        toastr.success('DSL Updated');
     } else {
         DslActions.createDsl(this.state.dsl);
+        toastr.success('DSL Saved');
     }
     
     this.setState({dirty: false});
-    toastr.success('DSL Saved');
+    
     this.transitionTo('dsls');
 },
  render: function() { 

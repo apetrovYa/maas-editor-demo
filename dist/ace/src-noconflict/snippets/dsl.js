@@ -7,45 +7,39 @@ exports.snippetText = "## DSL snippets \n\
 snippet collection\n\
 	collection( \n\
 	name: \" ${1} \" ${2}\n\
-	){ 	  \n\
-}\n\
+	){ ${3} }\n\
 \n\
 # DSL :: document\n\
 snippet document\n\
 	document(\n\
 	   name: \"${1}\" ${2}\n\
-	){  \n\
-}\n\
+	){ ${3} }\n\
 \n\
 # DSL :: cell\n\
 snippet cell\n\
 	cell( \n\
 	     name: \" ${1} \" ${2} \n\
-	){\n\
-}\n\
+	){ ${3} }\n\
 \n\
 # DSL :: dashboard \n\
 snippet dashboard \n\
 	dashboard(\n\
 		name: \" ${1} \" ${2}\n\
-	) { \n\
-		${3} \n\
-}\n\
+	) { ${3} }\n\
 \n\
 # DSL :: index\n\
 snippet index \n\
 	index (\n\
 		${1}\n\
-	) { 	\n\
-}\n\
+	) {  ${2} }\n\
 \n\
 # DSL :: show\n\
 snippet show\n\
 	show(\n\
 	 	${1} \n\
-	) { \n\
+	) { ${2} }\n\
 		 \n\
-}\n\
+\n\
 	\n\
 # DSL :: header :: name\n\
 snippet n \n\
