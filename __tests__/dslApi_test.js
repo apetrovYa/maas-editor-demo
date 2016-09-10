@@ -1,55 +1,80 @@
 const assert = require('assert');
+const should = require('should');
 
-describe('API Testing', function(){
-  const dslData = require('../src/api/dslData');
-  const api = require('../src/api/dslApi');
-  
-  describe('Getting all DSLs', function() {
-    it('should return the same number of elements', function() {
-      assert.equal(dslData['dsls'].length, (api.getAllDsls()).length);
+const dslData = require('../src/api/dslData');
+const api = require('../src/api/dslApi');
+
+describe('API Testing', function(){ 
+  describe('#getAllDsls()', function() {
+    it('should return the total number of elements', function() {
+      let numElementsInDslData = dslData['dsls'].length;
+      let numElemsReturnedFromAPI =(api.getAllDsls()).length; 
+      assert.equal(numElemsReturnedFromAPI, numElementsInDslData);
     });
   }); 
   
-  describe('Getting a DSL by Id', function() {
-    it('should return a legal existing id', function(){
+  describe('#getDslById()', function() {
+    it('should return an existing DSL by the given ID info', function(){
       let dsl = api.getDslById('1');
       let id = dsl['id'];
       assert.equal(id, '1');
     });    
   });
   
-  describe('Save a new DSL into the existinng collection of DSLs', function(){
-    it('should return the new size of the collection increased by 1', function(){
-      let dsl = {
+  describe('#saveDsl()', function(){
+     api.saveDsl({
         id: '',
         name: 'DSLNew',
         spec: 'document(name: \'newCollectionTest\'){}'
-      };
-      
-      api.saveDsl(dsl);
-      assert.equal(dslData.dsls.length, 4);
-      
-      // ------------------------------------------------
-      let dslnew = api.getDslById(4);
-      let id = dsl['id'];
-      let name = dsl['name'];
-      
-      describe('Id of the new inserted DSL', function() {
-        it('should return the id of new inserted dsl', function(){
-          assert.equal(id, 4);});
-        });
       });
+      
+      
+      it('should save the DSL into the collection', function(){
+        assert.equal(dslData.dsls.length, 4);
+      });
+      
+      it('should provide a consistent name after saving', function() {
+        let name = 'DSLNew';
+        assert.equal(dslData.dsls[3].name, name);
+      });
+      
+      it('should provide a consistent specification after saving', function(){
+        let spec = 'document(name: \'newCollectionTest\'){}';
+        assert.equal(dslData.dsls[3].spec,spec);
+      });
+    });
     
-      describe('The name of the new inserted DSl' , function() {
-        if('should be ', function() {
-          assert.equal(name, 'DSLNew');
+   describe('#removeDSL()' , function() {
+     it('should delete from the collection the DSL identified by ID', function(){
+       let d = api.deleteDsl('1');
+       assert.strictEqual(d, undefined);     
+      });
+      
+      it('should not be possible to find the previously deleted ID', function(){
+        let d = api.getDslById('1');
+        assert.strictEqual(d, undefined);
+      });
+   });
+   
+   describe('#empty()', function(){
+     describe('requiring the all DSLs from an empty collection', function() {     
+       it ('should return undefined', function(){ 
+           api.deleteDsl('0');
+           api.deleteDsl('2');
+           let collection = api.getAllDsls();
+           let id = collection[0].id;
+           api.deleteDsl(id);
+        assert.strictEqual(api.getAllDsls(), undefined);   
        });
+     });
+     describe('getting the DSL by ID from an empty collection ' , function() {
+      it ('should return undedined', function() {
+        assert.strictEqual(api.getDslById('2'), undefined);
       });
-    
-      describe('The name of the new inserted DSl' , function() {
-        if('should be different by', function() {
-          assert.equal(name, 'DSLOld');
-        });
-      });
-  });  
-});
+     });
+   });
+   
+  
+
+}); 
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1473543880539" clover="3.2.0">
+  <project timestamp="1473543880539" name="All files">
+    <metrics statements="19" coveredstatements="17" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6" elements="31" coveredelements="28" complexity="0" loc="19" ncloc="19" packages="1" files="2" classes="2">
+      <file name="dslApi.js" path="/home/apetrov/Desktop/maas-editor-demo/src/api/dslApi.js">
+        <metrics statements="18" coveredstatements="16" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+      </file>
+      <file name="dslData.js" path="/home/apetrov/Desktop/maas-editor-demo/src/api/dslData.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>

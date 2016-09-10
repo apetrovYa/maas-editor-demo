@@ -38,12 +38,12 @@ var _clone = function(item) {
 */
 var DslApi = {
 	getAllDsls: function() {
-		return _clone(dsls); 
+		return (dsls.length > 0)? _clone(dsls): undefined; 
 	},
 
 	getDslById: function(id) {
 		var dsl = _.find(dsls, {id: id});
-		return _clone(dsl);
+		return (dsl === undefined)? undefined: _clone(dsl);
 	},
 	
 	saveDsl: function(dsl) {

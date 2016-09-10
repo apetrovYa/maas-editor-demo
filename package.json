@@ -4,7 +4,7 @@
   "description": "MaaS Editor Demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Andrey Petrov",
   "license": "MIT",
@@ -31,10 +31,13 @@
     "react-router": "^0.13.3",
     "react-test-renderer": "15.3.1",
     "reactify": "^1.1.1",
+    "should": "11.1.0",
     "toastr": "https://registry.npmjs.org/toastr/-/toastr-2.1.2.tgz",
     "vinyl-source-stream": "^1.1.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js)$",
+    "collectCoverage": true
   }
 }
