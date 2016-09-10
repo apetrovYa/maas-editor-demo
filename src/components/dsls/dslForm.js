@@ -33,8 +33,12 @@ var DslForm = React.createClass({
                     value={this.props.dsl.spec}
                 /> 
                
-           <input type="submit" value="Save" className="btn btn-default" style={styleButton} onClick={this.props.onSave} />
-            </form>
+           <input type="submit" 
+                  value="Save" 
+                  className="btn btn-default" 
+                  style={styleButton} 
+                  onClick={this.props.onSave} />
+           </form>
         );
     }
 });

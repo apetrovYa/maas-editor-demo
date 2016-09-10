@@ -40,12 +40,12 @@ Dispatcher.register(function(action) {
         case ActionTypes.UPDATE_DSL:
                 var existingDsl = _.find(_dsls, {id: action.dsl.id});
                 var existingDslIndex = _.indexOf(_dsls, existingDsl);
-                _dsls.splice(existingDsl, 1, action.dsl);
+                _dsls.splice(existingDslIndex, 1, action.dsl);
                 DslStore.emitChange();
                 break;
         case ActionTypes.DELETE_DSL: 
                 _.remove(_dsls, function(dsl){
-                   return dsl.id === action.id; 
+                   return action.id === dsl.id; 
                 });                        
                 DslStore.emitChange();
                 break;

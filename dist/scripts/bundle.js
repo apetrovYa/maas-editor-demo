@@ -46340,8 +46340,8 @@ var _ = require('lodash');
  *  @return a value given by the arithmetic expression into the return statement.
  * 
  * */
-var _generateId = function(dslsInput) {
-	return dslsInput.length + 1;
+var _generateId = function() {
+	return Math.random();
 };
 
 /**
@@ -46391,7 +46391,7 @@ var DslApi = {
 		} else {
 			//Just simulating creation here.
 			//Cloning: returned copy is passed by value rather than by reference.
-			dsl.id = _generateId(dsls);
+			dsl.id = JSON.stringify(_generateId());
 			dsls.push(dsl);
 		}
 
@@ -46410,17 +46410,17 @@ module.exports = {
 	dsls: 
 	[
 		{
-			id: '1', 
+			id: '0', 
 			name: 'DSL1', 
 			spec: 'collection(name:"collection"){}'
 		},	
 		{
-			id: '2', 
+			id: '1', 
 			name: 'DSL2', 
 			spec: 'cell(name: "cell") {}'
 		},	
 		{
-			id: '3', 
+			id: '2', 
 			name: 'DSL3', 
 			spec: 'document(name: "document"){}'
 		}
@@ -46551,8 +46551,12 @@ var DslForm = React.createClass({displayName: "DslForm",
                     value: this.props.dsl.spec}
                 ), 
                
-           React.createElement("input", {type: "submit", value: "Save", className: "btn btn-default", style: styleButton, onClick: this.props.onSave})
-            )
+           React.createElement("input", {type: "submit", 
+                  value: "Save", 
+                  className: "btn btn-default", 
+                  style: styleButton, 
+                  onClick: this.props.onSave})
+           )
         );
     }
 });
@@ -46663,6 +46667,13 @@ var ManageDslPage = React.createClass({displayName: "ManageDslPage",
  mixins: [
      Router.Navigation
  ],
+ statics: {
+		willTransitionFrom: function(transition, component) {
+			if (component.state.dirty && !confirm('Leave without saving?')) {
+				transition.abort();
+			}
+		}
+ },
  getInitialState: function() {
     return {
         dsl: {id: '', name: '', spec: ''},
@@ -46680,7 +46691,7 @@ var ManageDslPage = React.createClass({displayName: "ManageDslPage",
 setDslState: function(event) {
     this.setState({dirty: true});
     var field = event.target.name;
-    var value = event.taget.value;
+    var value = event.target.value;
     this.state.dsl[field] = value;
     return this.setState({dsl: this.state.dsl});
 },
@@ -46701,15 +46712,16 @@ saveDsl: function(event) {
     if (!this.dslFormIsValid()) {
         return;
     }
-    
+         
     var editor = ace.edit("editor");
-    var value = editor.getValue();
-    this.state.dsl.spec = value; 
-        
+    var specification = editor.getValue();
+    
+    this.state.dsl.spec = specification;
+    
     if (this.state.dsl.id) {
         DslActions.updateDsl(this.state.dsl);
         toastr.success('DSL Updated');
-    } else {
+    } else {    
         DslActions.createDsl(this.state.dsl);
         toastr.success('DSL Saved');
     }
@@ -46764,7 +46776,10 @@ var Editor = React.createClass({displayName: "Editor",
         var editorStyle = {height: 500 };
         return (
             React.createElement("div", {className: "container-fluid"}, 
-                React.createElement("div", {id: "editor", style: editorStyle, className: "row"})
+                React.createElement("div", {id: "editor", 
+                     style: editorStyle, 
+                     className: "row"
+                     })
             )
         );
     }
@@ -46785,8 +46800,8 @@ var Home = React.createClass({displayName: "Home",
    return (
     React.createElement("div", {className: "jumbotron"}, 
       React.createElement("h1", null, "Welcome Geek!"), 
-      React.createElement("p", null, "Are you ready to write a new DSL?")
-      
+      React.createElement("p", null, "Are you ready to write a new DSL?"), 
+      React.createElement(Link, {to: "addDsl", className: "btn btn-success"}, "Write new DSL")
     )
   );
  }
@@ -46800,14 +46815,24 @@ var Link = require('react-router').Link;
 
 var NotFoundPage = React.createClass({displayName: "NotFoundPage",
  render: function() { 
+ 
+   
    return (
     React.createElement("div", null, 
       React.createElement("h1", null, "Page not found"), 
       React.createElement("p", null, "Whoops! Sorry, there is nothing to see here."), 
-      React.createElement("p", null, 
-      React.createElement("img", {src: "images/404-page-not-found-design.jpg", 
-           alt: "Page not found image"}), 
-      React.createElement(Link, {to: "app"}, "Back to Home"))
+      React.createElement("div", {className: "container"}, 
+        React.createElement("div", {className: "row"}, 
+          React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
+              React.createElement("img", {src: "images/404-page-not-found-design.jpg", 
+                    alt: "Page not found image", 
+                    className: "img-circle"}
+                     )
+           )
+        )
+        
+      ), 
+      React.createElement(Link, {to: "app"}, "Back to Home")
     )
   );
  }
@@ -46920,12 +46945,12 @@ Dispatcher.register(function(action) {
         case ActionTypes.UPDATE_DSL:
                 var existingDsl = _.find(_dsls, {id: action.dsl.id});
                 var existingDslIndex = _.indexOf(_dsls, existingDsl);
-                _dsls.splice(existingDsl, 1, action.dsl);
+                _dsls.splice(existingDslIndex, 1, action.dsl);
                 DslStore.emitChange();
                 break;
         case ActionTypes.DELETE_DSL: 
                 _.remove(_dsls, function(dsl){
-                   return dsl.id === action.id; 
+                   return action.id === dsl.id; 
                 });                        
                 DslStore.emitChange();
                 break;

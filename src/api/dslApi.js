@@ -12,8 +12,8 @@ var _ = require('lodash');
  *  @return a value given by the arithmetic expression into the return statement.
  * 
  * */
-var _generateId = function(dslsInput) {
-	return dslsInput.length + 1;
+var _generateId = function() {
+	return Math.random();
 };
 
 /**
@@ -63,7 +63,7 @@ var DslApi = {
 		} else {
 			//Just simulating creation here.
 			//Cloning: returned copy is passed by value rather than by reference.
-			dsl.id = _generateId(dsls);
+			dsl.id = JSON.stringify(_generateId());
 			dsls.push(dsl);
 		}
 

@@ -2,17 +2,17 @@ module.exports = {
 	dsls: 
 	[
 		{
-			id: '1', 
+			id: '0', 
 			name: 'DSL1', 
 			spec: 'collection(name:"collection"){}'
 		},	
 		{
-			id: '2', 
+			id: '1', 
 			name: 'DSL2', 
 			spec: 'cell(name: "cell") {}'
 		},	
 		{
-			id: '3', 
+			id: '2', 
 			name: 'DSL3', 
 			spec: 'document(name: "document"){}'
 		}
