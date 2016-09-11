@@ -4,6 +4,7 @@
   "description": "MaaS Editor Demo",
   "main": "index.js",
   "scripts": {
+    "start": "node web.js",
     "test": "jest"
   },
   "author": "Andrey Petrov",
