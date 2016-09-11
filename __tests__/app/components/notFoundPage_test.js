@@ -2,6 +2,7 @@ describe('NotFoundPage Component', function(){
     describe('must be rendered properly' , function() {
         let TestUtils = require('react-addons-test-utils');
         let React = require('react');
+        let ReactDom = require('react-dom');
         let NotFoundPage = require.requireActual('../../../src/components/notFoundPage.js');
         var ReactRouterContext = require('../../../testingHelpers/reactRouterContext.js'); 
         var notFoundPage;
@@ -9,8 +10,15 @@ describe('NotFoundPage Component', function(){
         NotFoundPage = ReactRouterContext(NotFoundPage, {});
         
         beforeEach(function() {
-            notFoundPage = TestUtils.renderIntoDocument(<NotFoundPage />);;  
+            notFoundPage = TestUtils.renderIntoDocument(<NotFoundPage />);
         });
+        
+         afterEach(function(done) {
+            ReactDom.unmountComponentAtNode(document.body); 
+            document.body.innerHTML = "";                
+            setTimeout(done);
+        });
+        
         
         it('should be rendered the h1 content properly', function(){
             let h1 = TestUtils.findRenderedDOMComponentWithTag(notFoundPage, 'h1');

@@ -4,14 +4,22 @@ describe('HomePage Component', function(){
     describe('must be rendered properly' , function() {
         let TestUtils = require('react-addons-test-utils');
         let React = require('react');
+        let ReactDom = require('react-dom');
         let HomePage = require.requireActual('../../../src/components/homePage.js');
         var ReactRouterContext = require('../../../testingHelpers/reactRouterContext.js');
         let homePage;
        
        
         HomePage = ReactRouterContext(HomePage, {});
+        
         beforeEach(function(){
           homePage = TestUtils.renderIntoDocument(<HomePage />);
+        });
+        
+         afterEach(function(done) {
+            ReactDom.unmountComponentAtNode(document.body);
+            document.body.innerHTML = "";               
+            setTimeout(done);
         });        
         
         it('should render properly the jumbotron container', function(){
