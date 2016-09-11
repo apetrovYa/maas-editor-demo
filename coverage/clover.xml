@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1473611416688" clover="3.2.0">
-  <project timestamp="1473611416688" name="All files">
-    <metrics statements="86" coveredstatements="62" conditionals="15" coveredconditionals="7" methods="34" coveredmethods="15" elements="135" coveredelements="84" complexity="0" loc="86" ncloc="86" packages="7" files="10" classes="10">
+<coverage generated="1473617143833" clover="3.2.0">
+  <project timestamp="1473617143834" name="All files">
+    <metrics statements="51" coveredstatements="48" conditionals="10" coveredconditionals="7" methods="27" coveredmethods="15" elements="88" coveredelements="70" complexity="0" loc="51" ncloc="51" packages="4" files="7" classes="7">
       <package name="src.api">
         <metrics statements="19" coveredstatements="17" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
         <file name="dslApi.js" path="/home/apetrov/Desktop/maas-editor-demo/src/api/dslApi.js">
@@ -70,59 +70,6 @@
           <line num="17" count="0" type="stmt"/>
           <line num="20" count="2" type="stmt"/>
           <line num="37" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.constants">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="actionTypes.js" path="/home/apetrov/Desktop/maas-editor-demo/src/constants/actionTypes.js">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.dispatcher">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="appDispatcher.js" path="/home/apetrov/Desktop/maas-editor-demo/src/dispatcher/appDispatcher.js">
-          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="13" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-        </file>
-      </package>
-      <package name="src.stores">
-        <metrics statements="31" coveredstatements="10" conditionals="5" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <file name="dslStore.js" path="/home/apetrov/Desktop/maas-editor-demo/src/stores/dslStore.js">
-          <metrics statements="31" coveredstatements="10" conditionals="5" coveredconditionals="0" methods="7" coveredmethods="0"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
-          <line num="12" count="1" type="stmt"/>
-          <line num="14" count="0" type="stmt"/>
-          <line num="17" count="0" type="stmt"/>
-          <line num="20" count="0" type="stmt"/>
-          <line num="23" count="0" type="stmt"/>
-          <line num="26" count="0" type="stmt"/>
-          <line num="30" count="1" type="stmt"/>
-          <line num="31" count="0" type="stmt"/>
-          <line num="33" count="0" type="stmt"/>
-          <line num="34" count="0" type="stmt"/>
-          <line num="35" count="0" type="stmt"/>
-          <line num="37" count="0" type="stmt"/>
-          <line num="38" count="0" type="stmt"/>
-          <line num="39" count="0" type="stmt"/>
-          <line num="41" count="0" type="stmt"/>
-          <line num="42" count="0" type="stmt"/>
-          <line num="43" count="0" type="stmt"/>
-          <line num="44" count="0" type="stmt"/>
-          <line num="45" count="0" type="stmt"/>
-          <line num="47" count="0" type="stmt"/>
-          <line num="48" count="0" type="stmt"/>
-          <line num="50" count="0" type="stmt"/>
-          <line num="51" count="0" type="stmt"/>
-          <line num="56" count="1" type="stmt"/>
         </file>
       </package>
       <package name="testingHelpers">

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node web.js",
     "test": "jest",
+    "lint": "eslint .",
     "travis": "npm test"
   },
   "author": "Andrey Petrov",
@@ -46,5 +47,12 @@
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js)$",
     "collectCoverage": true
+  },
+  "devDependencies": {
+    "eslint": "3.5.0",
+    "eslint-config-airbnb": "11.0.0",
+    "eslint-plugin-import": "1.14.0",
+    "eslint-plugin-jsx-a11y": "2.2.1",
+    "eslint-plugin-react": "6.2.0"
   }
 }
