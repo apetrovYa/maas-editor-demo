@@ -18,18 +18,25 @@ MaaS Editor provides some help for creating DSL specs.
 ## Common features
 
 In order to simplify the DSL editing, the Editor offers:
+
 	1. Syntax highlighting.
+
 	2. Indentation.
+
 	3. Snippets.
 
 ## Future work
 
 Offering a common editor features for a new non standard language is not an easy task but is a very challenging one.
 Indeed, soonely is programmed to add the following features:
-	1. Autocompletion. 
-	2. Syntax Checker.
-	3. Custom personalization.	
-	4. Live helper.
+
+1. Autocompletion. 
+
+2. Syntax Checker.
+
+3. Custom personalization.	
+
+4. Live helper.
 
 P.S. It's welcome any suggestion, idea and also collaboration... Together we can make the difference! :) 
 
