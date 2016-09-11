@@ -1,14 +1,27 @@
 {
   "name": "maas-editor-demo",
-  "version": "0.0.0",
-  "description": "MaaS Editor Demo",
+  "version": "1.0.0",
+  "description": "An example demo to illustrate how the MaaS Editor works and how it can fit the users needs",
+  "author": "Andrey Petrov <apetrov.ya@yandex.ru>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apetrovYa/maas-editor-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apetrovYa/maas-editor-demo/issues"
+  },
+  "keywords": [
+    "MaaS",
+    "MaaP",
+    "DSL",
+    "Editor",
+    "Demo"
+    ],
   "main": "index.js",
   "scripts": {
     "start": "node web.js",
     "test": "jest"
   },
-  "author": "Andrey Petrov",
-  "license": "MIT",
   "dependencies": {
     "babel-preset-es2015": "6.14.0",
     "babel-preset-react": "6.11.1",
@@ -45,5 +58,6 @@
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js)$",
     "collectCoverage": true
-  }
+  },
+  "license": "MIT"
 }
