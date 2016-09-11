@@ -18,18 +18,18 @@ MaaS Editor provides some help for creating DSL specs.
 ## Common features
 
 In order to simplify the DSL editing, the Editor offers:
-1. Syntax highlighting
-2. Indentation
-3. Snippets
+	1. Syntax highlighting.
+	2. Indentation.
+	3. Snippets.
 
 ## Future work
 
 Offering a common editor features for a new non standard language is not an easy task but is a very challenging one.
 Indeed, soonely is programmed to add the following features:
-1. Autocompletion 
-2. Syntax Checker
-3. Custom personalization
-4. Live helper
+	1. Autocompletion. 
+	2. Syntax Checker.
+	3. Custom personalization.	
+	4. Live helper.
 
 P.S. It's welcome any suggestion, idea and also collaboration... Together we can make the difference! :) 
 
@@ -48,121 +48,121 @@ And for more DSL examples please check here [link](https://github.com/steakholde
 ### Common ***snippets*** that can be used in the Editor
 
 -  DSL :: collection
-
+```
 > snippet collection
 > collection( 
+>
 >	  name: " "
 >	){ }
+```
 
 - DSL :: document
-
+```
 > snippet document
 >	document(
 >	  name: " " 
 >	){  }
+```
 
 -  DSL :: cell
-
+```
 > snippet cell
 > 	cell( 
 >	     name: " "  
 >	){  }
+```
 
 -  DSL :: dashboard 
-
->
+```
 > snippet dashboard 
 > 	dashboard(
 >		name: "  " 
 >	) {  }
 >
+```
 
 -  DSL :: index
 
->
+```
 > snippet index 
 >	index (
 >		
 >	) {   }
 >
--  DSL :: show
+```
 
+-  DSL :: show
+```
 > snippet show
 >	show(
 >	 	 
 >	) {  }
->		 
+```
 
-	
 -  DSL :: header :: name
-
+```
 > snippet n 
 >	name: "  "
+```
 
 -  DSL :: header :: label
-
->
+```
 > snippet l
 > label: " "
->
+```
 
 - DSL :: header :: weight
-
->
+```
 > snippet w 
 >	weight: "  "
->
-
+```
 
 - DSL :: [ collection | document ] :: perpage
-
->
+```
 > snippet p 
 >	perpage: 
->
+```
 
 -  DSL :: [ collection | document ] :: populate
-
->
+```
 > snippet pop 
 > populate: ""
->
+```
 
 - DSL :: [ collection | document ] :: sortby
-
->
+```
 >  snippet s 
 >  sortby: ""
+```
 
 -  DSL :: [ collection | document ] :: order
-
+```
 > snippet o
 >	order: ""
+```
 
 - DSL :: [ collection | document ] :: query
-
->
+```
 > snippet q 
 >	query: ""
->
+```
 
 - DSL :: [collection | document ] -> column :: sortable
-
->
+```
 > snippet srt 
 >	sortable: ""
->
+```
 
 - DSL :: [collection | document ] -> column :: selectable
-
->
+```
 > snippet se 
 >	selectable: "" 
->
+```
 
 - DSL :: [collection | document ] -> column | row :: transformation 
-
+```
 > snippet trans
 >	transformation: function() { 
 >	return  ; 
 >	}
+```
