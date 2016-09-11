@@ -54,7 +54,7 @@ Following this link, the useful info will take you [MaaP-DSL configurations](htt
 And for more DSL examples please check here [MaaP DSL examples](https://github.com/steakholders/maap/wiki/DSL-Configuration-File-Example).
 
 
-### Common ***snippets*** that can be used in the Editor
+### Common ***snippets*** that can be used within the Editor
 
 -  DSL :: collection
 ```
