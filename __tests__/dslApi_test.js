@@ -1,5 +1,4 @@
 const assert = require('assert');
-const should = require('should');
 
 const dslData = require('../src/api/dslData');
 const api = require('../src/api/dslApi');

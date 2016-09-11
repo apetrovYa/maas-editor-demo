@@ -23,15 +23,17 @@ var Editor = React.createClass({
     
             
             editor.setValue(this.props.value);  
-    },   
+    },
+       
     render: function () {
         var editorStyle = { height: 500 };
         return (
-            <div className="container-fluid">
+           <div className="container-fluid">
                 <div id="editor" 
                      style={editorStyle} 
                      className="row"
-                     ></div>
+                     >
+                </div>
             </div>
         );
     }
