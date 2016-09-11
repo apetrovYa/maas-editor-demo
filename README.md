@@ -33,36 +33,136 @@ Indeed, soonely is programmed to add the following features:
 
 P.S. It's welcome any suggestion, idea and also collaboration... Together we can make the difference! :) 
 
-## Where you can play with DSLs and the Editor?
+## Where can you play with DSLs and the Editor?
 
 The demo version is deployed on, the crazy platform, Heroku [link](https://maas-editor-demo.herokuapp.com/#/).
-**Have a nice time**  and ***let me know what you think about***
+****Have a nice time****  and ****let me know what you think about****
 
-## Whant to learn more about MaaS and MaaP DSLs?
+## Looking for learning more about MaaS and MaaP DSLs?
 
-GOTO -> [link](https://github.com/steakholders/maap/wiki/DSL-File-Configuration).
+Following this link, the useful info will take you [link](https://github.com/steakholders/maap/wiki/DSL-File-Configuration).
 
-And for more DSL examples go to [link](https://github.com/steakholders/maap/wiki/DSL-Configuration-File-Example).
+And for more DSL examples please check here [link](https://github.com/steakholders/maap/wiki/DSL-Configuration-File-Example).
 
 
-### Common ***snippets*** that can be used
+### Common ***snippets*** that can be used in the Editor
+
+-  DSL :: collection
+
+> snippet collection
+> collection( 
+>	  name: " "
+>	){ }
+
+- DSL :: document
+
+> snippet document
+>	document(
+>	  name: " " 
+>	){  }
+
+-  DSL :: cell
+
+> snippet cell
+> 	cell( 
+>	     name: " "  
+>	){  }
+
+-  DSL :: dashboard 
 
 >
-> collection *transforms into* collection(name: ""){} 
-> document *transforms into* document(name: ""){}
-> cell *transforms into* cell(name:""){}
-> dashboard *transforms into* dashboard(name: ""){}
->  
+> snippet dashboard 
+> 	dashboard(
+>		name: "  " 
+>	) {  }
+>
+
+-  DSL :: index
+
+>
+> snippet index 
+>	index (
+>		
+>	) {   }
+>
+-  DSL :: show
+
+> snippet show
+>	show(
+>	 	 
+>	) {  }
+>		 
+
+	
+-  DSL :: header :: name
+
+> snippet n 
+>	name: "  "
+
+-  DSL :: header :: label
+
+>
+> snippet l
+> label: " "
+>
+
+- DSL :: header :: weight
+
+>
+> snippet w 
+>	weight: "  "
+>
 
 
+- DSL :: [ collection | document ] :: perpage
 
+>
+> snippet p 
+>	perpage: 
+>
 
+-  DSL :: [ collection | document ] :: populate
 
+>
+> snippet pop 
+> populate: ""
+>
 
+- DSL :: [ collection | document ] :: sortby
 
+>
+>  snippet s 
+>  sortby: ""
 
+-  DSL :: [ collection | document ] :: order
 
+> snippet o
+>	order: ""
 
+- DSL :: [ collection | document ] :: query
 
+>
+> snippet q 
+>	query: ""
+>
 
-MaaS Editor is a subproject of the MaaP Project itself [https://github.com/steakholders/maap]
+- DSL :: [collection | document ] -> column :: sortable
+
+>
+> snippet srt 
+>	sortable: ""
+>
+
+- DSL :: [collection | document ] -> column :: selectable
+
+>
+> snippet se 
+>	selectable: "" 
+>
+
+- DSL :: [collection | document ] -> column | row :: transformation 
+
+> snippet trans
+>	transformation: function() { 
+>	return  ; 
+>	}
