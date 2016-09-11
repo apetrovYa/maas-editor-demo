@@ -40,16 +40,18 @@ Indeed, soonely is programmed to add the following features:
 
 P.S. It's welcome any suggestion, idea and also collaboration... Together we can make the difference! :) 
 
+
 ## Where can you play with DSLs and the Editor?
 
-The demo version is deployed on, the crazy platform, Heroku [link](https://maas-editor-demo.herokuapp.com/#/).
-****Have a nice time****  and ****let me know what you think about****
+The demo version is deployed on, the crazy platform, [Heroku](https://maas-editor-demo.herokuapp.com/#/).
+
+_Have a nice time_  and _let me know what you think about_
 
 ## Looking for learning more about MaaS and MaaP DSLs?
 
-Following this link, the useful info will take you [link](https://github.com/steakholders/maap/wiki/DSL-File-Configuration).
+Following this link, the useful info will take you [MaaP-DSL configurations](https://github.com/steakholders/maap/wiki/DSL-File-Configuration).
 
-And for more DSL examples please check here [link](https://github.com/steakholders/maap/wiki/DSL-Configuration-File-Example).
+And for more DSL examples please check here [MaaP DSL examples](https://github.com/steakholders/maap/wiki/DSL-Configuration-File-Example).
 
 
 ### Common ***snippets*** that can be used in the Editor
